@@ -102,3 +102,17 @@ UPDATE Veiculo SET Preco = 45000.00 WHERE fkmodelo = 5;
 
 -- fazer delete de um veículo específico (por exemplo, o veículo com placa 'ABC1234')
 DELETE FROM Veiculo WHERE Placa = 'ABC1234';
+
+-- EXERCICIOS DE ORDENAÇAO;
+
+-- 1. Listar todas as informaçoes dos veiculos em ordem crescente pela data
+SELECT * FROM Veiculo ORDER BY Data_de_Fabricacao ASC;
+
+--2. Listar somente id do veiculo id do fabricante e a placa do veiculo em ordenado pelo id do fabricante em ordem decrescente
+SELECT idveiculo, fkfabricante, Placa FROM Veiculo ORDER BY fkfabricante DESC;
+
+--3. listar somente o nome do fabricante ordenando pelo nome do fabricante em ordem crescente
+SELECT Nome FROM Fabricante ORDER BY Nome ASC;
+
+--4. LISTA todas as informaçoes de modelos ordenando pela data em ordem crescente
+SELECT * FROM Modelo ORDER BY Data_de_Lancamento ASC;
