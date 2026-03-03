@@ -89,3 +89,16 @@ FROM Veiculo v
 JOIN Fabricante f ON v.fkfabricante = f.Id
 JOIN Modelo m ON v.fkmodelo = m.idmodelo
 WHERE f.Nome = 'Honda';
+
+--adicionar coluna de preço na tabela Veiculo
+ALTER TABLE Veiculo ADD COLUMN Preco DECIMAL(10, 2);
+
+-- Atualizar o preço dos veículos
+UPDATE Veiculo SET Preco = 50000.00 WHERE fkmodelo = 1;
+UPDATE Veiculo SET Preco = 60000.00 WHERE fkmodelo = 2;
+UPDATE Veiculo SET Preco = 55000.00 WHERE fkmodelo = 3;
+UPDATE Veiculo SET Preco = 65000.00 WHERE fkmodelo = 4;
+UPDATE Veiculo SET Preco = 45000.00 WHERE fkmodelo = 5; 
+
+-- fazer delete de um veículo específico (por exemplo, o veículo com placa 'ABC1234')
+DELETE FROM Veiculo WHERE Placa = 'ABC1234';
